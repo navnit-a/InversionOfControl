@@ -6,9 +6,10 @@
         {
             var resolver = new Resolver();
             resolver.Register<Shopper, Shopper>();
-            resolver.Register<ICreditCard, MasterCard>();
-            var shopper = resolver.Resolve<Shopper>();
+            //resolver.Register<ICreditCard, MasterCard>();
+            resolver.Register<ICreditCard, Visa>();
 
+            var shopper = resolver.Resolve<Shopper>();
             shopper.Charge();
         }
     }
